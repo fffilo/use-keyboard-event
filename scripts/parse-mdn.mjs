@@ -22,7 +22,11 @@ function getHtml(node) {
 
 const src = "cache/mdn.md";
 const markdown = readFileSync(src, "utf8");
-const content = markdown.match(/^##\s[\s\S]*/m)[0];
+const match = markdown.match(/^##\s[\s\S]*/m);
+if (!match)
+    throw new Error("Unable to find first section.");
+
+const content = match[0];
 const tree = remark().parse(content);
 
 const sections = [];
