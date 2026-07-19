@@ -1,0 +1,57 @@
+{
+  "name": "use-keyboard-event",
+  "version": "0.0.1",
+  "description": "React's keyboard event hook.",
+  "keywords": [
+    "react",
+    "keyboard",
+    "event",
+    "keyup",
+    "keydown",
+    "hook"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "clean": "node -e \"const fs=require('fs-extra');fs.emptyDir('./cache');fs.emptyDir('./dist');\"",
+    "read-mdn": "node scripts/read-mdn.mjs",
+    "parse-mdn": "node scripts/parse-mdn.mjs",
+    "parse-data": "node scripts/parse-data.mjs",
+    "generate-hooks": "node scripts/generate-hooks.mjs",
+    "generate-readme": "node scripts/generate-readme.mjs",
+    "build": "npm run clean && npm run read-mdn && npm run parse-mdn && npm run parse-data && npm run generate-hooks && npm run generate-readme"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "files": [
+    "index.js",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": {
+    "name": "Franjo Filo",
+    "email": "fffilo666r@gmail.com",
+    "url": "https://github.com/fffilo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fffilo/use-keyboard-event.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fffilo/use-keyboard-event/issues"
+  },
+  "homepage": "https://github.com/fffilo/use-keyboard-event#readme",
+  "contributors": [],
+  "license": "MIT",
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "fs-extra": "^11.3.6",
+    "html-to-text": "^10.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark": "^15.0.1",
+    "remark-rehype": "^11.1.2"
+  }
+}
