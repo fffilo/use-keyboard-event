@@ -1,0 +1,18 @@
+import useKeyDown from "./useKeyDown";
+
+/**
+ * React useKeyDown wrapper for key "TVTerrestrialAnalog".
+ *
+ * Category                    TV control keys
+ * KeyboardEvent.key value     "TVTerrestrialAnalog"
+ * Description                 Selects analog terrestrial television service (analog cable or antenna reception).
+ * Virtual Keycode
+ *     Android                 KEYCODE_TV_TERRESTRIAL_ANALOG (235)
+ *
+ * @param  {Function} callback
+ * @param  {Boolean}  enabled
+ * @return {Void}
+ */
+export default function useTVTerrestrialAnalogKeyDown(callback, enabled = true) {
+    useKeyDown("TVTerrestrialAnalog", callback, enabled);
+};

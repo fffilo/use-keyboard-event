@@ -1,0 +1,24 @@
+import useKeyDown from "./useKeyDown";
+
+/**
+ * React useKeyDown wrapper for key "ContextMenu".
+ *
+ * Category                    UI keys
+ * KeyboardEvent.key value     "ContextMenu"
+ * Description                 Shows the context menu. Typically found between the Windows (or OS) key and the Control key on the right side of the keyboard.
+ * Virtual Keycode
+ *     Windows                 VK_APPS (0x5D)
+ *     Mac                     kVK_ContextualMenu (0x6E)
+ *     Linux                   GDK_KEY_Menu (0xFF67)
+ *                             Qt::Key_Menu (0x01000055)
+ *     Android                 KEYCODE_MENU (82)
+ *
+ * Firefox 36 and earlier reports "Apps" instead of "ContextMenu" for the context menu key.
+ *
+ * @param  {Function} callback
+ * @param  {Boolean}  enabled
+ * @return {Void}
+ */
+export default function useContextMenuKeyDown(callback, enabled = true) {
+    useKeyDown("ContextMenu", callback, enabled);
+};

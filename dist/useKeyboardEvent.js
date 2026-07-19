@@ -11,9 +11,9 @@ import { useRef, useEffect } from "react";
  * @return {Void}
  */
 export default function useKeyboardEvent(eventName, key, callback, enabled = true, target) {
-    if (eventName !== "keydown" && eventName !== "keyup")
+    if (!["keydown", "keyup"].includes(eventName))
         throw new Error(`Unsupported keyboard event "${eventName}".`);
-    if (target && typeof target.addEventListener !== "function")
+    if (target && !(target instanceof EventTarget))
         throw new TypeError("Argument target must implement EventTarget.");
 
     const callbackRef = useRef(callback);

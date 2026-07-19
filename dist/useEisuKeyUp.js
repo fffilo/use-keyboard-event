@@ -1,0 +1,23 @@
+import useKeyUp from "./useKeyUp";
+
+/**
+ * React useKeyUp wrapper for key "Eisu".
+ *
+ * Category                    IME and composition keys → Japanese keyboards only
+ * KeyboardEvent.key value     "Eisu"
+ * Description                 The Eisu key. This key's purpose is defined by the IME, but may be used to close the IME.
+ * Virtual Keycode
+ *     Mac                     kVK_JIS_Eisu (0x66)
+ *     Linux                   GDK_KEY_Eisu_toggle (0xFF2F)
+ *                             Qt::Key_Eisu_toggle (0x01001130)
+ *     Android                 KEYCODE_EISU (212)
+ *
+ * Prior to Firefox 37, the Eisu key was mapped to "RomanCharacters" by mistake.
+ *
+ * @param  {Function} callback
+ * @param  {Boolean}  enabled
+ * @return {Void}
+ */
+export default function useEisuKeyUp(callback, enabled = true) {
+    useKeyUp("Eisu", callback, enabled);
+};
