@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * These keys were "Unidentified" until Firefox 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAVRInputKeyDown(callback, enabled = true) {
-    useKeyDown("AVRInput", callback, enabled);
+export default function useAVRInputKeyDown(callback, enabled = true, target) {
+    useKeyDown("AVRInput", callback, enabled, target);
 };

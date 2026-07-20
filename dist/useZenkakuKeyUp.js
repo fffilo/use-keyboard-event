@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Firefox 36 and earlier identifies this key as "FullWidth" on Japanese keyboard layouts and "Unidentified" on all other keyboard layouts. Firefox 37 and later, and all versions of Google Chrome, correctly return "Zenkaku".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useZenkakuKeyUp(callback, enabled = true) {
-    useKeyUp("Zenkaku", callback, enabled);
+export default function useZenkakuKeyUp(callback, enabled = true, target) {
+    useKeyUp("Zenkaku", callback, enabled, target);
 };

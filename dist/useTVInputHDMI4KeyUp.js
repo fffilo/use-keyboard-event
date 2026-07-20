@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Android                 KEYCODE_TV_INPUT_HDMI_4 (246)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTVInputHDMI4KeyUp(callback, enabled = true) {
-    useKeyUp("TVInputHDMI4", callback, enabled);
+export default function useTVInputHDMI4KeyUp(callback, enabled = true, target) {
+    useKeyUp("TVInputHDMI4", callback, enabled, target);
 };

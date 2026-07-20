@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Android                 KEYCODE_APP_SWITCH (187)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAppSwitchKeyDown(callback, enabled = true) {
-    useKeyDown("AppSwitch", callback, enabled);
+export default function useAppSwitchKeyDown(callback, enabled = true, target) {
+    useKeyDown("AppSwitch", callback, enabled, target);
 };

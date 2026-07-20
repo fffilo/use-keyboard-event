@@ -1,0 +1,22 @@
+/**
+ * React useKeyDown wrapper for key "F11".
+ *
+ * Category                    Function keys
+ * KeyboardEvent.key value     "F11"
+ * Description                 The F11 key.
+ * Virtual Keycode
+ *     Windows                 VK_F11 (0x7A)
+ *     Mac                     kVK_F11 (0x67)
+ *     Linux                   GDK_KEY_F11 (0xFFC8)
+ *                             Qt::Key_F11 (0x0100003A)
+ *     Android                 KEYCODE_F11 (141)
+ *
+ * @param callback  Invoked when the keyboard event matches.
+ * @param enabled   Enables or disables the listener (defaults to `true`).
+ * @param target    Event target (defaults to `document`).
+ */
+export default function useF11KeyDown(
+    callback: (event: KeyboardEvent) => void,
+    enabled?: boolean,
+    target?: EventTarget
+): void;

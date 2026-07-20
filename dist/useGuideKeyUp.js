@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   Qt::Key_Guide (0x0100011A)
  *     Android                 KEYCODE_GUIDE (172)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useGuideKeyUp(callback, enabled = true) {
-    useKeyUp("Guide", callback, enabled);
+export default function useGuideKeyUp(callback, enabled = true, target) {
+    useKeyUp("Guide", callback, enabled, target);
 };

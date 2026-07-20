@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Windows                 VK_EREOF (0xF9)
  *     Linux                   GDK_KEY_3270_ExSelect (0xFD1B)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useEraseEofKeyDown(callback, enabled = true) {
-    useKeyDown("EraseEof", callback, enabled);
+export default function useEraseEofKeyDown(callback, enabled = true, target) {
+    useKeyDown("EraseEof", callback, enabled, target);
 };

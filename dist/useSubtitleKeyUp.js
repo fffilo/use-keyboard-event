@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Subtitle (0x1008FF9A)
  *     Android                 KEYCODE_CAPTIONS (175)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSubtitleKeyUp(callback, enabled = true) {
-    useKeyUp("Subtitle", callback, enabled);
+export default function useSubtitleKeyUp(callback, enabled = true, target) {
+    useKeyUp("Subtitle", callback, enabled, target);
 };

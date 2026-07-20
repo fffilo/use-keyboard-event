@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * The NonConvert key is reported as "Nonconvert" instead of the correct "NonConvert" by Firefox versions 36 and earlier.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useNonConvertKeyDown(callback, enabled = true) {
-    useKeyDown("NonConvert", callback, enabled);
+export default function useNonConvertKeyDown(callback, enabled = true, target) {
+    useKeyDown("NonConvert", callback, enabled, target);
 };

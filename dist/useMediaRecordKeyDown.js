@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_MediaRecord (0x01000084)
  *     Android                 KEYCODE_MEDIA_RECORD (130)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaRecordKeyDown(callback, enabled = true) {
-    useKeyDown("MediaRecord", callback, enabled);
+export default function useMediaRecordKeyDown(callback, enabled = true, target) {
+    useKeyDown("MediaRecord", callback, enabled, target);
 };

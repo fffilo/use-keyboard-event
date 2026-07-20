@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_MediaStop (0x01000081)
  *     Android                 KEYCODE_MEDIA_STOP (86)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaStopKeyDown(callback, enabled = true) {
-    useKeyDown("MediaStop", callback, enabled);
+export default function useMediaStopKeyDown(callback, enabled = true, target) {
+    useKeyDown("MediaStop", callback, enabled, target);
 };

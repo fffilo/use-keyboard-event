@@ -21,10 +21,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             KEYCODE_NUMPAD_ENTER (160)
  *                             KEYCODE_DPAD_CENTER (23)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useEnterKeyUp(callback, enabled = true) {
-    useKeyUp("Enter", callback, enabled);
+export default function useEnterKeyUp(callback, enabled = true, target) {
+    useKeyUp("Enter", callback, enabled, target);
 };

@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * The APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE command on Windows generates "Unidentified" on Firefox.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSpeechInputToggleKeyUp(callback, enabled = true) {
-    useKeyUp("SpeechInputToggle", callback, enabled);
+export default function useSpeechInputToggleKeyUp(callback, enabled = true, target) {
+    useKeyUp("SpeechInputToggle", callback, enabled, target);
 };

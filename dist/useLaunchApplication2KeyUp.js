@@ -14,10 +14,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Google Chrome 57 and earlier returned "LaunchCalculator" instead of "LaunchApplication2". See Chrome Bug 612743 [https://crbug.com/612743] for more information.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useLaunchApplication2KeyUp(callback, enabled = true) {
-    useKeyUp("LaunchApplication2", callback, enabled);
+export default function useLaunchApplication2KeyUp(callback, enabled = true, target) {
+    useKeyUp("LaunchApplication2", callback, enabled, target);
 };

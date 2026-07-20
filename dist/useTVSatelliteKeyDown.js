@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Android                 KEYCODE_TV_SATELLITE (237)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTVSatelliteKeyDown(callback, enabled = true) {
-    useKeyDown("TVSatellite", callback, enabled);
+export default function useTVSatelliteKeyDown(callback, enabled = true, target) {
+    useKeyDown("TVSatellite", callback, enabled, target);
 };

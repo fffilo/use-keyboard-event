@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * This key is reported as "Unidentified" prior to Firefox 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useHiraganaKatakanaKeyDown(callback, enabled = true) {
-    useKeyDown("HiraganaKatakana", callback, enabled);
+export default function useHiraganaKatakanaKeyDown(callback, enabled = true, target) {
+    useKeyDown("HiraganaKatakana", callback, enabled, target);
 };

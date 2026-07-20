@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Windows                 VK_PLAY_SPEED_RESET (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePlaySpeedResetKeyUp(callback, enabled = true) {
-    useKeyUp("PlaySpeedReset", callback, enabled);
+export default function usePlaySpeedResetKeyUp(callback, enabled = true, target) {
+    useKeyUp("PlaySpeedReset", callback, enabled, target);
 };

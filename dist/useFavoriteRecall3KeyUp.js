@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Windows                 VK_RECALL_FAVORITE_3 (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useFavoriteRecall3KeyUp(callback, enabled = true) {
-    useKeyUp("FavoriteRecall3", callback, enabled);
+export default function useFavoriteRecall3KeyUp(callback, enabled = true, target) {
+    useKeyUp("FavoriteRecall3", callback, enabled, target);
 };

@@ -14,10 +14,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_End (0x01000011)
  *     Android                 KEYCODE_MOVE_END (123)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useEndKeyUp(callback, enabled = true) {
-    useKeyUp("End", callback, enabled);
+export default function useEndKeyUp(callback, enabled = true, target) {
+    useKeyUp("End", callback, enabled, target);
 };

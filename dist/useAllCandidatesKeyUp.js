@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_MultipleCandidate (null)
  *                             Qt::Key_MultipleCandidate (0x0100113D)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAllCandidatesKeyUp(callback, enabled = true) {
-    useKeyUp("AllCandidates", callback, enabled);
+export default function useAllCandidatesKeyUp(callback, enabled = true, target) {
+    useKeyUp("AllCandidates", callback, enabled, target);
 };

@@ -14,10 +14,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * While older browsers used words like "Add", "Decimal", "Multiply", and so forth modern browsers identify these using the actual character ("+", ".", "*", and so forth).
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSeparatorKeyUp(callback, enabled = true) {
-    useKeyUp("Separator", callback, enabled);
+export default function useSeparatorKeyUp(callback, enabled = true, target) {
+    useKeyUp("Separator", callback, enabled, target);
 };

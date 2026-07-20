@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Windows                 VK_PLAY_SPEED_DOWN (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePlaySpeedDownKeyDown(callback, enabled = true) {
-    useKeyDown("PlaySpeedDown", callback, enabled);
+export default function usePlaySpeedDownKeyDown(callback, enabled = true, target) {
+    useKeyDown("PlaySpeedDown", callback, enabled, target);
 };

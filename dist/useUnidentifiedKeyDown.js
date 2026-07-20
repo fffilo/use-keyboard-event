@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   varies
  *     Android                 varies
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useUnidentifiedKeyDown(callback, enabled = true) {
-    useKeyDown("Unidentified", callback, enabled);
+export default function useUnidentifiedKeyDown(callback, enabled = true, target) {
+    useKeyDown("Unidentified", callback, enabled, target);
 };

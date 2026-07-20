@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_Clear (0x0100000B)
  *     Android                 KEYCODE_CLEAR (28)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useClearKeyDown(callback, enabled = true) {
-    useKeyDown("Clear", callback, enabled);
+export default function useClearKeyDown(callback, enabled = true, target) {
+    useKeyDown("Clear", callback, enabled, target);
 };

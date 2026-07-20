@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * The APPCOMMAND_CORRECTION_LIST command on Windows generates "Unidentified" on Firefox.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSpeechCorrectionListKeyDown(callback, enabled = true) {
-    useKeyDown("SpeechCorrectionList", callback, enabled);
+export default function useSpeechCorrectionListKeyDown(callback, enabled = true, target) {
+    useKeyDown("SpeechCorrectionList", callback, enabled, target);
 };

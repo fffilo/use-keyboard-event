@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_Insert (0x01000006)
  *     Android                 KEYCODE_INSERT (124)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useInsertKeyDown(callback, enabled = true) {
-    useKeyDown("Insert", callback, enabled);
+export default function useInsertKeyDown(callback, enabled = true, target) {
+    useKeyDown("Insert", callback, enabled, target);
 };

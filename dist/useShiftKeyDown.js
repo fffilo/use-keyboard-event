@@ -18,10 +18,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Android                 KEYCODE_SHIFT_LEFT (59)
  *                             KEYCODE_SHIFT_RIGHT (60)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useShiftKeyDown(callback, enabled = true) {
-    useKeyDown("Shift", callback, enabled);
+export default function useShiftKeyDown(callback, enabled = true, target) {
+    useKeyDown("Shift", callback, enabled, target);
 };

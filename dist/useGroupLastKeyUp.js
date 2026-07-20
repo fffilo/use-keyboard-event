@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Linux                   GDK_KEY_ISO_Last_Group (0xFE0E)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useGroupLastKeyUp(callback, enabled = true) {
-    useKeyUp("GroupLast", callback, enabled);
+export default function useGroupLastKeyUp(callback, enabled = true, target) {
+    useKeyUp("GroupLast", callback, enabled, target);
 };

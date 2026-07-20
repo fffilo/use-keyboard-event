@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Hangul_Jeonja (0xFF38)
  *                             Qt::Key_Hangul_Jeonja (0x01001138)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useJunjaModeKeyUp(callback, enabled = true) {
-    useKeyUp("JunjaMode", callback, enabled);
+export default function useJunjaModeKeyUp(callback, enabled = true, target) {
+    useKeyUp("JunjaMode", callback, enabled, target);
 };

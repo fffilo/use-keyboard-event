@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Prior to Firefox 37, Firefox generated the key code "FastFwd" on some platforms and "Unidentified" on others instead of "MediaFastForward".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaFastForwardKeyDown(callback, enabled = true) {
-    useKeyDown("MediaFastForward", callback, enabled);
+export default function useMediaFastForwardKeyDown(callback, enabled = true, target) {
+    useKeyDown("MediaFastForward", callback, enabled, target);
 };

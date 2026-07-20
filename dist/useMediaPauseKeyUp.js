@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_MediaPause (0x1000085)
  *     Android                 KEYCODE_MEDIA_PAUSE (127)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaPauseKeyUp(callback, enabled = true) {
-    useKeyUp("MediaPause", callback, enabled);
+export default function useMediaPauseKeyUp(callback, enabled = true, target) {
+    useKeyUp("MediaPause", callback, enabled, target);
 };

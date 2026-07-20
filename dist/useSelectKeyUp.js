@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Select (0xFF60)
  *     Android                 KEYCODE_BUTTON_SELECT (109)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSelectKeyUp(callback, enabled = true) {
-    useKeyUp("Select", callback, enabled);
+export default function useSelectKeyUp(callback, enabled = true, target) {
+    useKeyUp("Select", callback, enabled, target);
 };

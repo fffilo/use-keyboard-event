@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_Kanji (0x01001121)
  *     Android                 KEYCODE_KANA (218)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useKanjiModeKeyDown(callback, enabled = true) {
-    useKeyDown("KanjiMode", callback, enabled);
+export default function useKanjiModeKeyDown(callback, enabled = true, target) {
+    useKeyDown("KanjiMode", callback, enabled, target);
 };

@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Back (0x01000061)
  *     Android                 KEYCODE_BACK (4)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBrowserBackKeyUp(callback, enabled = true) {
-    useKeyUp("BrowserBack", callback, enabled);
+export default function useBrowserBackKeyUp(callback, enabled = true, target) {
+    useKeyUp("BrowserBack", callback, enabled, target);
 };

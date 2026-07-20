@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_F7 (0x01000036)
  *     Android                 KEYCODE_F7 (137)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useF7KeyUp(callback, enabled = true) {
-    useKeyUp("F7", callback, enabled);
+export default function useF7KeyUp(callback, enabled = true, target) {
+    useKeyUp("F7", callback, enabled, target);
 };

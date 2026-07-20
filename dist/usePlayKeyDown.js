@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   GDK_KEY_3270_Play (0xFD16)
  *                             Qt::Key_Play (0x01020005)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePlayKeyDown(callback, enabled = true) {
-    useKeyDown("Play", callback, enabled);
+export default function usePlayKeyDown(callback, enabled = true, target) {
+    useKeyDown("Play", callback, enabled, target);
 };

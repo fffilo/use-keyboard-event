@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_MonBrightnessDown (0x010000B3)
  *     Android                 KEYCODE_BRIGHTNESS_DOWN (220)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBrightnessDownKeyUp(callback, enabled = true) {
-    useKeyUp("BrightnessDown", callback, enabled);
+export default function useBrightnessDownKeyUp(callback, enabled = true, target) {
+    useKeyUp("BrightnessDown", callback, enabled, target);
 };

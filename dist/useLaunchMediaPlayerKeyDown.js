@@ -16,10 +16,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Legacy Edge and Firefox (36 and earlier) use "SelectMedia" instead of "LaunchMediaPlayer". Firefox 37 through Firefox 48 use "MediaSelect". Firefox 49 has been updated to match the latest specification, and to return "LaunchMediaPlayer".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useLaunchMediaPlayerKeyDown(callback, enabled = true) {
-    useKeyDown("LaunchMediaPlayer", callback, enabled);
+export default function useLaunchMediaPlayerKeyDown(callback, enabled = true, target) {
+    useKeyDown("LaunchMediaPlayer", callback, enabled, target);
 };

@@ -18,10 +18,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Android                 KEYCODE_CTRL_LEFT (113)
  *                             KEYCODE_CTRL_RIGHT (114)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useControlKeyUp(callback, enabled = true) {
-    useKeyUp("Control", callback, enabled);
+export default function useControlKeyUp(callback, enabled = true, target) {
+    useKeyUp("Control", callback, enabled, target);
 };

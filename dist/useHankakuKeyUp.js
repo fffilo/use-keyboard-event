@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Prior to Firefox 37, the Hankaku (half-width) key generated the key value "HalfWidth" on Firefox.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useHankakuKeyUp(callback, enabled = true) {
-    useKeyUp("Hankaku", callback, enabled);
+export default function useHankakuKeyUp(callback, enabled = true, target) {
+    useKeyUp("Hankaku", callback, enabled, target);
 };

@@ -1,0 +1,19 @@
+/**
+ * React useKeyDown wrapper for key "Dimmer".
+ *
+ * Category                    Media controller keys
+ * KeyboardEvent.key value     "Dimmer"
+ * Description                 Adjusts the brightness of the device by toggling between two brightness levels or by cycling among multiple brightness levels.
+ * Virtual Keycode
+ *     Windows                 VK_DIMMER (null)
+ *     Linux                   GDK_KEY_BrightnessAdjust (0x1008FF3B)
+ *
+ * @param callback  Invoked when the keyboard event matches.
+ * @param enabled   Enables or disables the listener (defaults to `true`).
+ * @param target    Event target (defaults to `document`).
+ */
+export default function useDimmerKeyDown(
+    callback: (event: KeyboardEvent) => void,
+    enabled?: boolean,
+    target?: EventTarget
+): void;

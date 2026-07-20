@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Windows                 VK_RECALL_FAVORITE_1 (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useFavoriteRecall1KeyDown(callback, enabled = true) {
-    useKeyDown("FavoriteRecall1", callback, enabled);
+export default function useFavoriteRecall1KeyDown(callback, enabled = true, target) {
+    useKeyDown("FavoriteRecall1", callback, enabled, target);
 };

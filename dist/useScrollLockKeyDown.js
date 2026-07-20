@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Firefox did not add support for the Symbol key until Firefox 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useScrollLockKeyDown(callback, enabled = true) {
-    useKeyDown("ScrollLock", callback, enabled);
+export default function useScrollLockKeyDown(callback, enabled = true, target) {
+    useKeyDown("ScrollLock", callback, enabled, target);
 };

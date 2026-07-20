@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Backspace (0x01000003)
  *     Android                 KEYCODE_DEL (67)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBackspaceKeyUp(callback, enabled = true) {
-    useKeyUp("Backspace", callback, enabled);
+export default function useBackspaceKeyUp(callback, enabled = true, target) {
+    useKeyUp("Backspace", callback, enabled, target);
 };

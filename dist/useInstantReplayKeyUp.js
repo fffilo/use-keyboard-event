@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Windows                 VK_INSTANT_REPLAY (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useInstantReplayKeyUp(callback, enabled = true) {
-    useKeyUp("InstantReplay", callback, enabled);
+export default function useInstantReplayKeyUp(callback, enabled = true, target) {
+    useKeyUp("InstantReplay", callback, enabled, target);
 };

@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_Eisu_Shift (0x0100112f)
  *                             Qt::Key_Eisu_toggle (0x01001130)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAlphanumericKeyDown(callback, enabled = true) {
-    useKeyDown("Alphanumeric", callback, enabled);
+export default function useAlphanumericKeyDown(callback, enabled = true, target) {
+    useKeyDown("Alphanumeric", callback, enabled, target);
 };

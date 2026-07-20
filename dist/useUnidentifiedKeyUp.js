@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   varies
  *     Android                 varies
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useUnidentifiedKeyUp(callback, enabled = true) {
-    useKeyUp("Unidentified", callback, enabled);
+export default function useUnidentifiedKeyUp(callback, enabled = true, target) {
+    useKeyUp("Unidentified", callback, enabled, target);
 };

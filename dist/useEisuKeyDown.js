@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Prior to Firefox 37, the Eisu key was mapped to "RomanCharacters" by mistake.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useEisuKeyDown(callback, enabled = true) {
-    useKeyDown("Eisu", callback, enabled);
+export default function useEisuKeyDown(callback, enabled = true, target) {
+    useKeyDown("Eisu", callback, enabled, target);
 };

@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_PageDown (0x01000017)
  *     Android                 KEYCODE_PAGE_DOWN (93)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePageDownKeyDown(callback, enabled = true) {
-    useKeyDown("PageDown", callback, enabled);
+export default function usePageDownKeyDown(callback, enabled = true, target) {
+    useKeyDown("PageDown", callback, enabled, target);
 };

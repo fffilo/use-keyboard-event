@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Prior to Firefox 37, the Home button generated a key code of "Exit". Starting in Firefox 37, the button generates the key code "MozHomeScreen".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useGoHomeKeyUp(callback, enabled = true) {
-    useKeyUp("GoHome", callback, enabled);
+export default function useGoHomeKeyUp(callback, enabled = true, target) {
+    useKeyUp("GoHome", callback, enabled, target);
 };

@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Firefox 36 and earlier identifies the Romaji key as "RomanCharacters" on Japanese keyboards and "Unidentified" for other keyboards; this is corrected to return "Romaji" in Firefox 37 and later.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useRomajiKeyDown(callback, enabled = true) {
-    useKeyDown("Romaji", callback, enabled);
+export default function useRomajiKeyDown(callback, enabled = true, target) {
+    useKeyDown("Romaji", callback, enabled, target);
 };

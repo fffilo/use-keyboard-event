@@ -16,10 +16,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Android                 KEYCODE_NUMPAD_0 (144)
  *                             KEYCODE_NUMPAD_9 (153)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function use0KeyDown(callback, enabled = true) {
-    useKeyDown("0", callback, enabled);
+export default function use0KeyDown(callback, enabled = true, target) {
+    useKeyDown("0", callback, enabled, target);
 };

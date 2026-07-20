@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Android                 KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP (253)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTVAudioDescriptionMixUpKeyDown(callback, enabled = true) {
-    useKeyDown("TVAudioDescriptionMixUp", callback, enabled);
+export default function useTVAudioDescriptionMixUpKeyDown(callback, enabled = true, target) {
+    useKeyDown("TVAudioDescriptionMixUp", callback, enabled, target);
 };

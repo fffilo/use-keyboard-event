@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Windows                 VK_CC (null)
  *     Android                 KEYCODE_CAPTIONS (175)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useClosedCaptionToggleKeyUp(callback, enabled = true) {
-    useKeyUp("ClosedCaptionToggle", callback, enabled);
+export default function useClosedCaptionToggleKeyUp(callback, enabled = true, target) {
+    useKeyUp("ClosedCaptionToggle", callback, enabled, target);
 };

@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Eject (0x010000B9)
  *     Android                 KEYCODE_MEDIA_EJECT (129)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useEjectKeyUp(callback, enabled = true) {
-    useKeyUp("Eject", callback, enabled);
+export default function useEjectKeyUp(callback, enabled = true, target) {
+    useKeyUp("Eject", callback, enabled, target);
 };

@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_MicMute (0x01000113)
  *     Android                 KEYCODE_MUTE (91)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMicrophoneVolumeMuteKeyDown(callback, enabled = true) {
-    useKeyDown("MicrophoneVolumeMute", callback, enabled);
+export default function useMicrophoneVolumeMuteKeyDown(callback, enabled = true, target) {
+    useKeyDown("MicrophoneVolumeMute", callback, enabled, target);
 };

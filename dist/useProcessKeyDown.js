@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * The Process key currently returns "Unidentified" in Firefox. Google Chrome returns the value of the key as if IME were not in use.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useProcessKeyDown(callback, enabled = true) {
-    useKeyDown("Process", callback, enabled);
+export default function useProcessKeyDown(callback, enabled = true, target) {
+    useKeyDown("Process", callback, enabled, target);
 };

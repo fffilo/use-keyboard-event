@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_LaunchMail (0x010000A0)
  *     Android                 KEYCODE_ENVELOPE (65)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useLaunchMailKeyDown(callback, enabled = true) {
-    useKeyDown("LaunchMail", callback, enabled);
+export default function useLaunchMailKeyDown(callback, enabled = true, target) {
+    useKeyDown("LaunchMail", callback, enabled, target);
 };

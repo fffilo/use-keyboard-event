@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_AudioRewind (0x010000C5)
  *     Android                 KEYCODE_MEDIA_REWIND (89)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaRewindKeyUp(callback, enabled = true) {
-    useKeyUp("MediaRewind", callback, enabled);
+export default function useMediaRewindKeyUp(callback, enabled = true, target) {
+    useKeyUp("MediaRewind", callback, enabled, target);
 };

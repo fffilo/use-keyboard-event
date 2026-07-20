@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   Qt::Key_ToggleCallHangup (0x01100007)
  *     Android                 KEYCODE_HEADSETHOOK (79)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useHeadsetHookKeyDown(callback, enabled = true) {
-    useKeyDown("HeadsetHook", callback, enabled);
+export default function useHeadsetHookKeyDown(callback, enabled = true, target) {
+    useKeyDown("HeadsetHook", callback, enabled, target);
 };

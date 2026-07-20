@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_PowerDown (0x0100010B)
  *                             Qt::Key_PowerOff (0x010000B7)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePowerOffKeyUp(callback, enabled = true) {
-    useKeyUp("PowerOff", callback, enabled);
+export default function usePowerOffKeyUp(callback, enabled = true, target) {
+    useKeyUp("PowerOff", callback, enabled, target);
 };

@@ -16,10 +16,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Edge (16 and earlier) and Firefox (36 and earlier) use "Left", "Right", "Up", and "Down" instead of "ArrowLeft", "ArrowRight", "ArrowUp", and "ArrowDown".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useArrowDownKeyUp(callback, enabled = true) {
-    useKeyUp("ArrowDown", callback, enabled);
+export default function useArrowDownKeyUp(callback, enabled = true, target) {
+    useKeyUp("ArrowDown", callback, enabled, target);
 };

@@ -19,10 +19,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Firefox 118 and later correctly report the Windows key as "Meta" (earlier versions reported the key as "OS").
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMetaKeyDown(callback, enabled = true) {
-    useKeyDown("Meta", callback, enabled);
+export default function useMetaKeyDown(callback, enabled = true, target) {
+    useKeyDown("Meta", callback, enabled, target);
 };

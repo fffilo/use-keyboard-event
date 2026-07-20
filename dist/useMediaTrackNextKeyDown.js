@@ -15,10 +15,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Legacy Edge and Firefox (36 and earlier) use "MediaNextTrack" and "MediaPreviousTrack" instead of "MediaTrackNext" and "MediaTrackPrevious".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaTrackNextKeyDown(callback, enabled = true) {
-    useKeyDown("MediaTrackNext", callback, enabled);
+export default function useMediaTrackNextKeyDown(callback, enabled = true, target) {
+    useKeyDown("MediaTrackNext", callback, enabled, target);
 };

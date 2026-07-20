@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Linux                   Qt::Key_Context1 (0x01100000)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSoft1KeyUp(callback, enabled = true) {
-    useKeyUp("Soft1", callback, enabled);
+export default function useSoft1KeyUp(callback, enabled = true, target) {
+    useKeyUp("Soft1", callback, enabled, target);
 };

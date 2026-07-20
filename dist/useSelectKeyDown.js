@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   GDK_KEY_Select (0xFF60)
  *     Android                 KEYCODE_BUTTON_SELECT (109)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSelectKeyDown(callback, enabled = true) {
-    useKeyDown("Select", callback, enabled);
+export default function useSelectKeyDown(callback, enabled = true, target) {
+    useKeyDown("Select", callback, enabled, target);
 };

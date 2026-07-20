@@ -16,10 +16,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Prior to Firefox 37, this key's value was reported as "Unidentified".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBrowserFavoritesKeyDown(callback, enabled = true) {
-    useKeyDown("BrowserFavorites", callback, enabled);
+export default function useBrowserFavoritesKeyDown(callback, enabled = true, target) {
+    useKeyDown("BrowserFavorites", callback, enabled, target);
 };

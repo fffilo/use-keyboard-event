@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_F13 (0x0100003C)
  *     Android                 KEYCODE_F13 (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useF13KeyDown(callback, enabled = true) {
-    useKeyDown("F13", callback, enabled);
+export default function useF13KeyDown(callback, enabled = true, target) {
+    useKeyDown("F13", callback, enabled, target);
 };

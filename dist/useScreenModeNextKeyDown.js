@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Windows                 VK_SCREEN_MODE_NEXT (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useScreenModeNextKeyDown(callback, enabled = true) {
-    useKeyDown("ScreenModeNext", callback, enabled);
+export default function useScreenModeNextKeyDown(callback, enabled = true, target) {
+    useKeyDown("ScreenModeNext", callback, enabled, target);
 };

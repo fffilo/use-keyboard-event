@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Firefox 36 and earlier generates the value "Crsel" instead of "CrSel" when the CrSel key is pressed.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCrSelKeyDown(callback, enabled = true) {
-    useKeyDown("CrSel", callback, enabled);
+export default function useCrSelKeyDown(callback, enabled = true, target) {
+    useKeyDown("CrSel", callback, enabled, target);
 };

@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Codeinput (0xFF37)
  *                             Qt::Key_Codeinput (0x01001137)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCodeInputKeyUp(callback, enabled = true) {
-    useKeyUp("CodeInput", callback, enabled);
+export default function useCodeInputKeyUp(callback, enabled = true, target) {
+    useKeyUp("CodeInput", callback, enabled, target);
 };

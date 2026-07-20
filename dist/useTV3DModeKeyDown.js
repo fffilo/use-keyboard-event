@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Android                 KEYCODE_3D_MODE (206)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTV3DModeKeyDown(callback, enabled = true) {
-    useKeyDown("TV3DMode", callback, enabled);
+export default function useTV3DModeKeyDown(callback, enabled = true, target) {
+    useKeyDown("TV3DMode", callback, enabled, target);
 };

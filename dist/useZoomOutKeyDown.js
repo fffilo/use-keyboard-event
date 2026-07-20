@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Firefox didn't support the "ZoomIn" and "ZoomOut" keys until Firefox 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useZoomOutKeyDown(callback, enabled = true) {
-    useKeyDown("ZoomOut", callback, enabled);
+export default function useZoomOutKeyDown(callback, enabled = true, target) {
+    useKeyDown("ZoomOut", callback, enabled, target);
 };

@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Windows                 VK_ACCEPT (0x1E)
  *     Android                 KEYCODE_DPAD_CENTER (23)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAcceptKeyDown(callback, enabled = true) {
-    useKeyDown("Accept", callback, enabled);
+export default function useAcceptKeyDown(callback, enabled = true, target) {
+    useKeyDown("Accept", callback, enabled, target);
 };

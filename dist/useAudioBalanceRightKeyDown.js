@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Windows                 VK_AUDIO_BALANCE_RIGHT (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAudioBalanceRightKeyDown(callback, enabled = true) {
-    useKeyDown("AudioBalanceRight", callback, enabled);
+export default function useAudioBalanceRightKeyDown(callback, enabled = true, target) {
+    useKeyDown("AudioBalanceRight", callback, enabled, target);
 };

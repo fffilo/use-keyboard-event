@@ -16,10 +16,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Legacy Edge and Firefox (48 and earlier) use "VolumeUp", "VolumeDown", and "VolumeMute" instead of "AudioVolumeUp", "AudioVolumeDown", and "AudioVolumeMute". In Firefox 49 they were updated to match the latest specification.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAudioVolumeMuteKeyDown(callback, enabled = true) {
-    useKeyDown("AudioVolumeMute", callback, enabled);
+export default function useAudioVolumeMuteKeyDown(callback, enabled = true, target) {
+    useKeyDown("AudioVolumeMute", callback, enabled, target);
 };

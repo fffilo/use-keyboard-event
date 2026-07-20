@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Android                 KEYCODE_NAVIGATE_PREVIOUS (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useNavigatePreviousKeyUp(callback, enabled = true) {
-    useKeyUp("NavigatePrevious", callback, enabled);
+export default function useNavigatePreviousKeyUp(callback, enabled = true, target) {
+    useKeyUp("NavigatePrevious", callback, enabled, target);
 };

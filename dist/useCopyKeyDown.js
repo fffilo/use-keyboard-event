@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   GDK_KEY_Copy (0x1008FF57)
  *                             Qt::Key_Copy (0x010000CF)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCopyKeyDown(callback, enabled = true) {
-    useKeyDown("Copy", callback, enabled);
+export default function useCopyKeyDown(callback, enabled = true, target) {
+    useKeyDown("Copy", callback, enabled, target);
 };

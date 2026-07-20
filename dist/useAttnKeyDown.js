@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * The Attn key generates the key code "Unidentified" on Firefox and Google Chrome, unless the Japanese keyboard layout is in effect, in which case it generates "KanaMode" instead.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAttnKeyDown(callback, enabled = true) {
-    useKeyDown("Attn", callback, enabled);
+export default function useAttnKeyDown(callback, enabled = true, target) {
+    useKeyDown("Attn", callback, enabled, target);
 };

@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Windows                 VK_PINP_UP (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePinPUpKeyUp(callback, enabled = true) {
-    useKeyUp("PinPUp", callback, enabled);
+export default function usePinPUpKeyUp(callback, enabled = true, target) {
+    useKeyUp("PinPUp", callback, enabled, target);
 };

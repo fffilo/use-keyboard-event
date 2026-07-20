@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Linux                   GDK_KEY_ISO_First_Group (0xFE0C)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useGroupFirstKeyDown(callback, enabled = true) {
-    useKeyDown("GroupFirst", callback, enabled);
+export default function useGroupFirstKeyDown(callback, enabled = true, target) {
+    useKeyDown("GroupFirst", callback, enabled, target);
 };

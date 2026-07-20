@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   Qt::Key_MediaTogglePlayPause (0x1000086)
  *     Android                 KEYCODE_MEDIA_PLAY_PAUSE (85)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaPlayPauseKeyDown(callback, enabled = true) {
-    useKeyDown("MediaPlayPause", callback, enabled);
+export default function useMediaPlayPauseKeyDown(callback, enabled = true, target) {
+    useKeyDown("MediaPlayPause", callback, enabled, target);
 };

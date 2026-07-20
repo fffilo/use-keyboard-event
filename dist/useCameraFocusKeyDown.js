@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   Qt::Key_CameraFocus (0x01100021)
  *     Android                 KEYCODE_FOCUS (80)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCameraFocusKeyDown(callback, enabled = true) {
-    useKeyDown("CameraFocus", callback, enabled);
+export default function useCameraFocusKeyDown(callback, enabled = true, target) {
+    useKeyDown("CameraFocus", callback, enabled, target);
 };

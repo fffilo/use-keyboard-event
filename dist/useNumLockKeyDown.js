@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_NumLock (0x01000025)
  *     Android                 KEYCODE_NUM_LOCK (143)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useNumLockKeyDown(callback, enabled = true) {
-    useKeyDown("NumLock", callback, enabled);
+export default function useNumLockKeyDown(callback, enabled = true, target) {
+    useKeyDown("NumLock", callback, enabled, target);
 };

@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   Qt::Key_VoiceDial (0x01100008)
  *     Android                 KEYCODE_VOICE_ASSIST (231)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useVoiceDialKeyDown(callback, enabled = true) {
-    useKeyDown("VoiceDial", callback, enabled);
+export default function useVoiceDialKeyDown(callback, enabled = true, target) {
+    useKeyDown("VoiceDial", callback, enabled, target);
 };

@@ -7,10 +7,11 @@ import useKeyUp from "./useKeyUp.js";
  * KeyboardEvent.key value     "Props"
  * Description                 The Props (Properties) key.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePropsKeyUp(callback, enabled = true) {
-    useKeyUp("Props", callback, enabled);
+export default function usePropsKeyUp(callback, enabled = true, target) {
+    useKeyUp("Props", callback, enabled, target);
 };

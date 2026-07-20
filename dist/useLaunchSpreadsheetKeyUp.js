@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Prior to Firefox 37, Firefox returned the key code "LaunchApplication1" instead of "LaunchWebBrowser" for the Web browser key.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useLaunchSpreadsheetKeyUp(callback, enabled = true) {
-    useKeyUp("LaunchSpreadsheet", callback, enabled);
+export default function useLaunchSpreadsheetKeyUp(callback, enabled = true, target) {
+    useKeyUp("LaunchSpreadsheet", callback, enabled, target);
 };

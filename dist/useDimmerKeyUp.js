@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Windows                 VK_DIMMER (null)
  *     Linux                   GDK_KEY_BrightnessAdjust (0x1008FF3B)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useDimmerKeyUp(callback, enabled = true) {
-    useKeyUp("Dimmer", callback, enabled);
+export default function useDimmerKeyUp(callback, enabled = true, target) {
+    useKeyUp("Dimmer", callback, enabled, target);
 };

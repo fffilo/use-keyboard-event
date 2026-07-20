@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Android                 KEYCODE_POWER (26)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePowerKeyDown(callback, enabled = true) {
-    useKeyDown("Power", callback, enabled);
+export default function usePowerKeyDown(callback, enabled = true, target) {
+    useKeyDown("Power", callback, enabled, target);
 };

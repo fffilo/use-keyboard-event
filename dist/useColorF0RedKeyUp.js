@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * These keys were "Unidentified" until Firefox 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useColorF0RedKeyUp(callback, enabled = true) {
-    useKeyUp("ColorF0Red", callback, enabled);
+export default function useColorF0RedKeyUp(callback, enabled = true, target) {
+    useKeyUp("ColorF0Red", callback, enabled, target);
 };

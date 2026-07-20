@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_CapsLock (0x01000024)
  *     Android                 KEYCODE_CAPS_LOCK (115)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCapsLockKeyUp(callback, enabled = true) {
-    useKeyUp("CapsLock", callback, enabled);
+export default function useCapsLockKeyUp(callback, enabled = true, target) {
+    useKeyUp("CapsLock", callback, enabled, target);
 };

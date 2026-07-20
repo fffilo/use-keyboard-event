@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Pause (0x01000008)
  *     Android                 KEYCODE_BREAK (121)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePauseKeyUp(callback, enabled = true) {
-    useKeyUp("Pause", callback, enabled);
+export default function usePauseKeyUp(callback, enabled = true, target) {
+    useKeyUp("Pause", callback, enabled, target);
 };

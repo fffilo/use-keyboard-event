@@ -14,10 +14,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Home (0x01000010)
  *     Android                 KEYCODE_MOVE_HOME (122)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useHomeKeyUp(callback, enabled = true) {
-    useKeyUp("Home", callback, enabled);
+export default function useHomeKeyUp(callback, enabled = true, target) {
+    useKeyUp("Home", callback, enabled, target);
 };

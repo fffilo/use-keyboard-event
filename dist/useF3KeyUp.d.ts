@@ -1,0 +1,23 @@
+/**
+ * React useKeyUp wrapper for key "F3".
+ *
+ * Category                    Function keys
+ * KeyboardEvent.key value     "F3"
+ * Description                 The F3 key.
+ * Virtual Keycode
+ *     Windows                 VK_F3 (0x72)
+ *     Mac                     kVK_F3 (0x63)
+ *     Linux                   GDK_KEY_F3 (0xFFC0)
+ *                             GDK_KEY_KP_F3 (0xFF93)
+ *                             Qt::Key_F3 (0x01000032)
+ *     Android                 KEYCODE_F3 (133)
+ *
+ * @param callback  Invoked when the keyboard event matches.
+ * @param enabled   Enables or disables the listener (defaults to `true`).
+ * @param target    Event target (defaults to `document`).
+ */
+export default function useF3KeyUp(
+    callback: (event: KeyboardEvent) => void,
+    enabled?: boolean,
+    target?: EventTarget
+): void;

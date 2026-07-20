@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Firefox 36 and earlier generates the value "Exsel" instead of "ExSel" when the ExSel key is pressed.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useExSelKeyUp(callback, enabled = true) {
-    useKeyUp("ExSel", callback, enabled);
+export default function useExSelKeyUp(callback, enabled = true, target) {
+    useKeyUp("ExSel", callback, enabled, target);
 };

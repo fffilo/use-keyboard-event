@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Android                 KEYCODE_TV_TIMER_PROGRAMMING (258)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTVTimerKeyUp(callback, enabled = true) {
-    useKeyUp("TVTimer", callback, enabled);
+export default function useTVTimerKeyUp(callback, enabled = true, target) {
+    useKeyUp("TVTimer", callback, enabled, target);
 };

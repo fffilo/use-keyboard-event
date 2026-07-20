@@ -15,10 +15,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_SysReq (0x0100000A)
  *     Android                 KEYCODE_SYSRQ (120)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePrintScreenKeyUp(callback, enabled = true) {
-    useKeyUp("PrintScreen", callback, enabled);
+export default function usePrintScreenKeyUp(callback, enabled = true, target) {
+    useKeyUp("PrintScreen", callback, enabled, target);
 };

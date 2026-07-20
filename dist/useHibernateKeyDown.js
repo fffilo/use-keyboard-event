@@ -12,10 +12,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Prior to Firefox 37, this key generated the value "Unidentified".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useHibernateKeyDown(callback, enabled = true) {
-    useKeyDown("Hibernate", callback, enabled);
+export default function useHibernateKeyDown(callback, enabled = true, target) {
+    useKeyDown("Hibernate", callback, enabled, target);
 };

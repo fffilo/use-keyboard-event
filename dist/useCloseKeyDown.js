@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Prior to Firefox 37, this key generated the key value "Unidentified".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCloseKeyDown(callback, enabled = true) {
-    useKeyDown("Close", callback, enabled);
+export default function useCloseKeyDown(callback, enabled = true, target) {
+    useKeyDown("Close", callback, enabled, target);
 };

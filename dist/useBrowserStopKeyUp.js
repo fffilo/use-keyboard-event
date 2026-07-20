@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Stop (0x1008FF28)
  *                             Qt::Key_Search (0x01000063)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBrowserStopKeyUp(callback, enabled = true) {
-    useKeyUp("BrowserStop", callback, enabled);
+export default function useBrowserStopKeyUp(callback, enabled = true, target) {
+    useKeyUp("BrowserStop", callback, enabled, target);
 };

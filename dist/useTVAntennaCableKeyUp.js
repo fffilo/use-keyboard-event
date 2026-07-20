@@ -9,10 +9,11 @@ import useKeyUp from "./useKeyUp.js";
  * Virtual Keycode
  *     Android                 KEYCODE_TV_ANTENNA_CABLE (242)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTVAntennaCableKeyUp(callback, enabled = true) {
-    useKeyUp("TVAntennaCable", callback, enabled);
+export default function useTVAntennaCableKeyUp(callback, enabled = true, target) {
+    useKeyUp("TVAntennaCable", callback, enabled, target);
 };

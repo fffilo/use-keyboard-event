@@ -10,3 +10,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - React hook useKeyboardEvent.
 - React hook useKeyDown (useKeyboardEvent wrapper).
 - React hook useKeyUp (useKeyboardEvent wrapper).
+- Dedicated wrappers for every supported `KeyboardEvent.key` value.
+- Type declaration file for each hook.

@@ -12,10 +12,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Clear (0x0100000B)
  *     Android                 KEYCODE_CLEAR (28)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useClearKeyUp(callback, enabled = true) {
-    useKeyUp("Clear", callback, enabled);
+export default function useClearKeyUp(callback, enabled = true, target) {
+    useKeyUp("Clear", callback, enabled, target);
 };

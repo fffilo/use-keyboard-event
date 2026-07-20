@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Firefox 36 and earlier identifies the zoom toggle button as "Zoom". Firefox 37 corrects this to "ZoomToggle".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useZoomToggleKeyUp(callback, enabled = true) {
-    useKeyUp("ZoomToggle", callback, enabled);
+export default function useZoomToggleKeyUp(callback, enabled = true, target) {
+    useKeyUp("ZoomToggle", callback, enabled, target);
 };

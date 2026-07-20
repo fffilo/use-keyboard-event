@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   Qt::Key_TopMenu (0x0100010A)
  *     Android                 KEYCODE_MEDIA_TOP_MENU (null)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useMediaTopMenuKeyUp(callback, enabled = true) {
-    useKeyUp("MediaTopMenu", callback, enabled);
+export default function useMediaTopMenuKeyUp(callback, enabled = true, target) {
+    useKeyUp("MediaTopMenu", callback, enabled, target);
 };

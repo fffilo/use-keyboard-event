@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Windows                 VK_TELETEXT (null)
  *     Android                 KEYCODE_TV_TELETEXT (233)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTeletextKeyDown(callback, enabled = true) {
-    useKeyDown("Teletext", callback, enabled);
+export default function useTeletextKeyDown(callback, enabled = true, target) {
+    useKeyDown("Teletext", callback, enabled, target);
 };

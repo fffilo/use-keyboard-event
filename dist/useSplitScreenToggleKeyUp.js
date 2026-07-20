@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_SplitScreen (0x1008FF7D)
  *                             Qt::Key_SplitScreen (0x010000ED)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSplitScreenToggleKeyUp(callback, enabled = true) {
-    useKeyUp("SplitScreenToggle", callback, enabled);
+export default function useSplitScreenToggleKeyUp(callback, enabled = true, target) {
+    useKeyUp("SplitScreenToggle", callback, enabled, target);
 };

@@ -18,7 +18,7 @@ function splitDocBlock(value, offset=4) {
     return [ value ];
 };
 
-function generateDocBlock(lines, wrapper, config, categories, footnotes) {
+function generateDocBlock(lines, wrapper, config, categories, footnotes, declaration=false) {
     lines.push(`/**`);
     lines.push(` * React ${wrapper} wrapper for key "${config.key}".`);
     lines.push(` *`);
@@ -30,10 +30,18 @@ function generateDocBlock(lines, wrapper, config, categories, footnotes) {
     lines.push(` *`);
     generateDocBlockFootnotes(lines, config.footnotes, footnotes);
 
-    lines.push(` * @param  {Function} callback`);
-    lines.push(` * @param  {Boolean}  enabled`);
-    lines.push(` * @return {Void}`);
-    lines.push(` */`);
+    if (!declaration) {
+        lines.push(" * @param  {Function}    callback  Invoked when the keyboard event matches.");
+        lines.push(" * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).");
+        lines.push(" * @param  {EventTarget} target    Event target (defaults to `document`).");
+        lines.push(" * @return {Void}");
+    } else {
+        lines.push(" * @param callback  Invoked when the keyboard event matches.");
+        lines.push(" * @param enabled   Enables or disables the listener (defaults to `true`).");
+        lines.push(" * @param target    Event target (defaults to `document`).");
+    }
+
+    lines.push(" */");
 };
 
 function generateDocBlockCategory(lines, categories) {
@@ -107,9 +115,22 @@ function generateScript(hookName, wrapper, config, categories, footnotes) {
     lines.push(`import ${wrapper} from "./${wrapper}.js";`);
     lines.push(``);
     generateDocBlock(lines, wrapper, config, categories, footnotes);
-    lines.push(`export default function ${hookName}(callback, enabled = true) {`);
-    lines.push(`    ${wrapper}("${config.key}", callback, enabled);`);
+    lines.push(`export default function ${hookName}(callback, enabled = true, target) {`);
+    lines.push(`    ${wrapper}("${config.key}", callback, enabled, target);`);
     lines.push(`};`);
+    lines.push(``);
+
+    return lines.join("\n");
+};
+
+function generateTypeDeclarationFile(hookName, wrapper, config, categories, footnotes) {
+    const lines = [];
+    generateDocBlock(lines, wrapper, config, categories, footnotes, true);
+    lines.push(`export default function ${hookName}(`);
+    lines.push("    callback: (event: KeyboardEvent) => void,");
+    lines.push("    enabled?: boolean,");
+    lines.push("    target?: EventTarget");
+    lines.push(`): void;`);
     lines.push(``);
 
     return lines.join("\n");
@@ -136,10 +157,10 @@ function processSection(section, ...category) {
                 const eventName = `Key${dir.charAt(0).toUpperCase() + dir.slice(1)}`;
                 const hookName = `use${(config.key in aliases) ? aliases[config.key] : config.key}${eventName}`;
                 const wrapper = `use${eventName}`;
-                const dst = `${dist}/${hookName}.js`;
-                const script = generateScript(hookName, wrapper, config, [...category, section.category], section.footnotes);
 
-                writeFileSync(dst, script);
+                writeFileSync(`${dist}/${hookName}.js`, generateScript(hookName, wrapper, config, [...category, section.category], section.footnotes));
+                writeFileSync(`${dist}/${hookName}.d.ts`, generateTypeDeclarationFile(hookName, wrapper, config, [...category, section.category], section.footnotes));
+
                 generated.push(hookName);
             });
     }
@@ -149,6 +170,8 @@ function processSection(section, ...category) {
 // dist directory.
 ["useKeyboardEvent", "useKeyDown", "useKeyUp"].forEach((hookName) => {
     copyFileSync(`src/${hookName}.js`, `dist/${hookName}.js`)
+    copyFileSync(`src/${hookName}.d.ts`, `dist/${hookName}.d.ts`)
+
     copied.push(hookName);
 });
 

@@ -31,7 +31,6 @@
   },
   "files": [
     "dist/*",
-    "index.js",
     "CHANGELOG.md",
     "LICENSE",
     "README.md"

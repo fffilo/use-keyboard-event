@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_F6 (0x01000035)
  *     Android                 KEYCODE_F6 (136)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useF6KeyDown(callback, enabled = true) {
-    useKeyDown("F6", callback, enabled);
+export default function useF6KeyDown(callback, enabled = true, target) {
+    useKeyDown("F6", callback, enabled, target);
 };

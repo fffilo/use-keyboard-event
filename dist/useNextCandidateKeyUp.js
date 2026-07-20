@@ -7,10 +7,11 @@ import useKeyUp from "./useKeyUp.js";
  * KeyboardEvent.key value     "NextCandidate"
  * Description                 The Next Candidate function key. Selects the next possible match for the ongoing input.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useNextCandidateKeyUp(callback, enabled = true) {
-    useKeyUp("NextCandidate", callback, enabled);
+export default function useNextCandidateKeyUp(callback, enabled = true, target) {
+    useKeyUp("NextCandidate", callback, enabled, target);
 };

@@ -15,10 +15,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_Tab (0x01000001)
  *     Android                 KEYCODE_TAB (61)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTabKeyDown(callback, enabled = true) {
-    useKeyDown("Tab", callback, enabled);
+export default function useTabKeyDown(callback, enabled = true, target) {
+    useKeyDown("Tab", callback, enabled, target);
 };

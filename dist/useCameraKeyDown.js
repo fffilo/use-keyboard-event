@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   Qt::Key_Camera (0x01100020)
  *     Android                 KEYCODE_CAMERA (27)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useCameraKeyDown(callback, enabled = true) {
-    useKeyDown("Camera", callback, enabled);
+export default function useCameraKeyDown(callback, enabled = true, target) {
+    useKeyDown("Camera", callback, enabled, target);
 };

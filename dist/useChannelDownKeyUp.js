@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   Qt::Key_ChannelDown (0x01000119)
  *     Android                 KEYCODE_CHANNEL_DOWN (167)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useChannelDownKeyUp(callback, enabled = true) {
-    useKeyUp("ChannelDown", callback, enabled);
+export default function useChannelDownKeyUp(callback, enabled = true, target) {
+    useKeyUp("ChannelDown", callback, enabled, target);
 };

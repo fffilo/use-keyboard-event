@@ -15,10 +15,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Firefox generates the key value "AltGraph" instead of "ModeChange".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useModeChangeKeyUp(callback, enabled = true) {
-    useKeyUp("ModeChange", callback, enabled);
+export default function useModeChangeKeyUp(callback, enabled = true, target) {
+    useKeyUp("ModeChange", callback, enabled, target);
 };

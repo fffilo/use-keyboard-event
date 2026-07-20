@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_F12 (0x0100003B)
  *     Android                 KEYCODE_F12 (142)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useF12KeyUp(callback, enabled = true) {
-    useKeyUp("F12", callback, enabled);
+export default function useF12KeyUp(callback, enabled = true, target) {
+    useKeyUp("F12", callback, enabled, target);
 };

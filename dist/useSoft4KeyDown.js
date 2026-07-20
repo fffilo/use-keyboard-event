@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Linux                   Qt::Key_Context4 (0x01100003)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSoft4KeyDown(callback, enabled = true) {
-    useKeyDown("Soft4", callback, enabled);
+export default function useSoft4KeyDown(callback, enabled = true, target) {
+    useKeyDown("Soft4", callback, enabled, target);
 };

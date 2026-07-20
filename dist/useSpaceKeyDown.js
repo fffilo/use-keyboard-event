@@ -16,10 +16,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Older browsers may return "Spacebar" instead of " " for the Space Bar key. Firefox did so until version 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSpaceKeyDown(callback, enabled = true) {
-    useKeyDown(" ", callback, enabled);
+export default function useSpaceKeyDown(callback, enabled = true, target) {
+    useKeyDown(" ", callback, enabled, target);
 };

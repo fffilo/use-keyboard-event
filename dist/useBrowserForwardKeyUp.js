@@ -13,10 +13,11 @@ import useKeyUp from "./useKeyUp.js";
  *                             Qt::Key_Forward (0x01000062)
  *     Android                 KEYCODE_FORWARD (125)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBrowserForwardKeyUp(callback, enabled = true) {
-    useKeyUp("BrowserForward", callback, enabled);
+export default function useBrowserForwardKeyUp(callback, enabled = true, target) {
+    useKeyUp("BrowserForward", callback, enabled, target);
 };

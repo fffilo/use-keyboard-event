@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Phone (0x1008FF6E)
  *                             Qt::Key_Phone (0x010000E3)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useLaunchPhoneKeyUp(callback, enabled = true) {
-    useKeyUp("LaunchPhone", callback, enabled);
+export default function useLaunchPhoneKeyUp(callback, enabled = true, target) {
+    useKeyUp("LaunchPhone", callback, enabled, target);
 };

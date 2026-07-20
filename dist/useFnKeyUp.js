@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Mac                     kVK_Function (0x3F)
  *     Android                 KEYCODE_FUNCTION (119)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useFnKeyUp(callback, enabled = true) {
-    useKeyUp("Fn", callback, enabled);
+export default function useFnKeyUp(callback, enabled = true, target) {
+    useKeyUp("Fn", callback, enabled, target);
 };

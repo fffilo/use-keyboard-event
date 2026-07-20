@@ -13,10 +13,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_Backspace (0x01000003)
  *     Android                 KEYCODE_DEL (67)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useBackspaceKeyDown(callback, enabled = true) {
-    useKeyDown("Backspace", callback, enabled);
+export default function useBackspaceKeyDown(callback, enabled = true, target) {
+    useKeyDown("Backspace", callback, enabled, target);
 };

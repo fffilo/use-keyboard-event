@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Windows                 VK_EXIT (null)
  *     Linux                   Qt::Key_Exit (0x0102000a)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useExitKeyUp(callback, enabled = true) {
-    useKeyUp("Exit", callback, enabled);
+export default function useExitKeyUp(callback, enabled = true, target) {
+    useKeyUp("Exit", callback, enabled, target);
 };

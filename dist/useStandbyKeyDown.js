@@ -18,10 +18,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * The Standby key is not supported by Firefox 36 and earlier, so it is reported as "Unidentified".
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useStandbyKeyDown(callback, enabled = true) {
-    useKeyDown("Standby", callback, enabled);
+export default function useStandbyKeyDown(callback, enabled = true, target) {
+    useKeyDown("Standby", callback, enabled, target);
 };

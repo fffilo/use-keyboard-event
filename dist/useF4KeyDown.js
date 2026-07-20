@@ -14,10 +14,11 @@ import useKeyDown from "./useKeyDown.js";
  *                             Qt::Key_F4 (0x01000033)
  *     Android                 KEYCODE_F4 (134)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useF4KeyDown(callback, enabled = true) {
-    useKeyDown("F4", callback, enabled);
+export default function useF4KeyDown(callback, enabled = true, target) {
+    useKeyDown("F4", callback, enabled, target);
 };

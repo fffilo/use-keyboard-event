@@ -18,10 +18,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Android                 KEYCODE_SHIFT_LEFT (59)
  *                             KEYCODE_SHIFT_RIGHT (60)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useShiftKeyUp(callback, enabled = true) {
-    useKeyUp("Shift", callback, enabled);
+export default function useShiftKeyUp(callback, enabled = true, target) {
+    useKeyUp("Shift", callback, enabled, target);
 };

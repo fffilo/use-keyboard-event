@@ -11,10 +11,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Linux                   GDK_KEY_Paste (0x1008FF6D)
  *                             Qt::Key_Paste (0x010000E2)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function usePasteKeyUp(callback, enabled = true) {
-    useKeyUp("Paste", callback, enabled);
+export default function usePasteKeyUp(callback, enabled = true, target) {
+    useKeyUp("Paste", callback, enabled, target);
 };

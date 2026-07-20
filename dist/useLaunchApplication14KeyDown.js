@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   GDK_KEY_LaunchD (0x1008FF4D)
  *                             Qt::Key_LaunchD (0x010000AF)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useLaunchApplication14KeyDown(callback, enabled = true) {
-    useKeyDown("LaunchApplication14", callback, enabled);
+export default function useLaunchApplication14KeyDown(callback, enabled = true, target) {
+    useKeyDown("LaunchApplication14", callback, enabled, target);
 };

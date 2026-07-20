@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Windows                 APPCOMMAND_FIND (null)
  *     Linux                   GDK_KEY_Find (0xFF68)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useFindKeyDown(callback, enabled = true) {
-    useKeyDown("Find", callback, enabled);
+export default function useFindKeyDown(callback, enabled = true, target) {
+    useKeyDown("Find", callback, enabled, target);
 };

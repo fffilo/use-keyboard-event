@@ -9,10 +9,11 @@ import useKeyDown from "./useKeyDown.js";
  * Virtual Keycode
  *     Android                 KEYCODE_TV_RADIO_SERVICE (232)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useTVRadioServiceKeyDown(callback, enabled = true) {
-    useKeyDown("TVRadioService", callback, enabled);
+export default function useTVRadioServiceKeyDown(callback, enabled = true, target) {
+    useKeyDown("TVRadioService", callback, enabled, target);
 };

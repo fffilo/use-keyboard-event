@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Windows                 APPCOMMAND_REDO (null)
  *     Linux                   GDK_KEY_Redo (0xFF66)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useRedoKeyUp(callback, enabled = true) {
-    useKeyUp("Redo", callback, enabled);
+export default function useRedoKeyUp(callback, enabled = true, target) {
+    useKeyUp("Redo", callback, enabled, target);
 };

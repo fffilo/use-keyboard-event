@@ -10,10 +10,11 @@ import useKeyUp from "./useKeyUp.js";
  *     Windows                 VK_RANDOM_TOGGLE (null)
  *     Linux                   GDK_KEY_AudioRandomPlay (0x1008FF99)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useRandomToggleKeyUp(callback, enabled = true) {
-    useKeyUp("RandomToggle", callback, enabled);
+export default function useRandomToggleKeyUp(callback, enabled = true, target) {
+    useKeyUp("RandomToggle", callback, enabled, target);
 };

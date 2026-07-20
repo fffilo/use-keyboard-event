@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   Qt::Key_Guide (0x0100011A)
  *     Android                 KEYCODE_GUIDE (172)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useGuideKeyDown(callback, enabled = true) {
-    useKeyDown("Guide", callback, enabled);
+export default function useGuideKeyDown(callback, enabled = true, target) {
+    useKeyDown("Guide", callback, enabled, target);
 };

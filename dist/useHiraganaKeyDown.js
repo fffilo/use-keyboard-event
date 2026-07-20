@@ -11,10 +11,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Linux                   GDK_KEY_Hiragana (0xFF25)
  *                             Qt::Key_Hiragana (0x01001125)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useHiraganaKeyDown(callback, enabled = true) {
-    useKeyDown("Hiragana", callback, enabled);
+export default function useHiraganaKeyDown(callback, enabled = true, target) {
+    useKeyDown("Hiragana", callback, enabled, target);
 };

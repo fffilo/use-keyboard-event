@@ -16,10 +16,11 @@ import useKeyUp from "./useKeyUp.js";
  *
  * Older browsers may return "Spacebar" instead of " " for the Space Bar key. Firefox did so until version 37.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useSpaceKeyUp(callback, enabled = true) {
-    useKeyUp(" ", callback, enabled);
+export default function useSpaceKeyUp(callback, enabled = true, target) {
+    useKeyUp(" ", callback, enabled, target);
 };

@@ -10,10 +10,11 @@ import useKeyDown from "./useKeyDown.js";
  *     Windows                 VK_RANDOM_TOGGLE (null)
  *     Linux                   GDK_KEY_AudioRandomPlay (0x1008FF99)
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useRandomToggleKeyDown(callback, enabled = true) {
-    useKeyDown("RandomToggle", callback, enabled);
+export default function useRandomToggleKeyDown(callback, enabled = true, target) {
+    useKeyDown("RandomToggle", callback, enabled, target);
 };

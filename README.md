@@ -16,13 +16,11 @@ handling.
 ## Features
 
 - ⚛️ React hooks
-- 🪶 Lightweight with zero dependencies (except React)
+- 🪶 Lightweight with zero runtime dependencies (except React)
 - 🌳 Tree-shakeable ES modules
 - ⌨️ Supports both `keydown` and `keyup` events
-- 🎯 Dedicated hook for every standard `KeyboardEvent.key`
+- 🎯 Dedicated hooks for every standard `KeyboardEvent.key`
 - 🔧 Generic hooks for custom keyboard logic
-- 📖 Documentation generated from MDN
-- 🌍 Cross-platform key descriptions and virtual key codes
 - 🧩 Supports custom `EventTarget`
 - ✅ SSR-safe
 
@@ -231,6 +229,20 @@ The library follows the standard `KeyboardEvent.key` API supported by all modern
 Generated documentation is based on the MDN Web Docs keyboard specification.
 
 ---
+
+## Documentation
+
+Every generated hook includes comprehensive JSDoc based on the official MDN `KeyboardEvent.key` documentation.
+
+This means your IDE can provide:
+
+- key descriptions
+- platform-specific virtual key codes
+- browser compatibility notes
+- deprecation information
+- links to the relevant MDN documentation
+
+The documentation is generated automatically, keeping it synchronized with the latest MDN keyboard specification.
 
 ## License
 

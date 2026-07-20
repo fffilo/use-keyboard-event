@@ -19,10 +19,11 @@ import useKeyDown from "./useKeyDown.js";
  *
  * Chrome 67 and Firefox 63 now correctly interpret the right Alt key for keyboard layouts which map that key to AltGr. See Firefox bug Firefox bug 900750 [https://bugzil.la/900750] and Chrome bug 25503 [https://crbug.com/25503] for further details.
  *
- * @param  {Function} callback
- * @param  {Boolean}  enabled
+ * @param  {Function}    callback  Invoked when the keyboard event matches.
+ * @param  {Boolean}     enabled   Enables or disables the listener (defaults to `true`).
+ * @param  {EventTarget} target    Event target (defaults to `document`).
  * @return {Void}
  */
-export default function useAltGraphKeyDown(callback, enabled = true) {
-    useKeyDown("AltGraph", callback, enabled);
+export default function useAltGraphKeyDown(callback, enabled = true, target) {
+    useKeyDown("AltGraph", callback, enabled, target);
 };
