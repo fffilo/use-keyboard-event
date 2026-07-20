@@ -157,11 +157,15 @@ for (const section of data) {
     processSection(section);
 }
 
+// @todo
+// - last key entry is "0" through "9" (need to create entry for each key)
+// - there are two "Clear" keys ("Editing keys" category and "Numeric keypad keys" category)
+
 // Create barrel file.
 writeFileSync("dist/index.js", `export { default } from "./useKeyboardEvent.js";
 export { default as useKeyDown } from "./useKeyDown.js";
 export { default as useKeyUp } from "./useKeyUp.js";
-${generated.map(hookName => `export { default as ${hookName} } from "./${hookName}.js";`).join("\n")}
+${generated.filter((hookName, index, array) => array.indexOf(hookName) === index).map(hookName => `export { default as ${hookName} } from "./${hookName}.js";`).join("\n")}
 `);
 
 console.log(`Copied ${copied.length} hook(s) from source, ${generated.length} key hook(s) generated, ${deprecated.length} deprecated key(s) skipped`);

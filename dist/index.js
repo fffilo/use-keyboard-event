@@ -623,8 +623,6 @@ export { default as useKey11KeyDown } from "./useKey11KeyDown.js";
 export { default as useKey11KeyUp } from "./useKey11KeyUp.js";
 export { default as useKey12KeyDown } from "./useKey12KeyDown.js";
 export { default as useKey12KeyUp } from "./useKey12KeyUp.js";
-export { default as useClearKeyDown } from "./useClearKeyDown.js";
-export { default as useClearKeyUp } from "./useClearKeyUp.js";
 export { default as useSeparatorKeyDown } from "./useSeparatorKeyDown.js";
 export { default as useSeparatorKeyUp } from "./useSeparatorKeyUp.js";
 export { default as use0KeyDown } from "./use0KeyDown.js";
