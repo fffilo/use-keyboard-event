@@ -10,7 +10,10 @@
     "keydown",
     "hook"
   ],
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "scripts": {
     "clean": "node -e \"const fs=require('fs-extra');fs.emptyDir('./cache');fs.emptyDir('./dist');\"",
     "read-mdn": "node scripts/read-mdn.mjs",
