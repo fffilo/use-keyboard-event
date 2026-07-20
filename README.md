@@ -11,22 +11,30 @@ Unlike most keyboard hook libraries, `use-keyboard-event` provides dedicated hoo
 `KeyboardEvent.key` value defined by MDN, while still exposing flexible generic hooks for custom keyboard
 handling.
 
+---
+
 ## Features
 
 - ⚛️ React hooks
 - 🪶 Lightweight with zero dependencies (except React)
 - 🌳 Tree-shakeable ES modules
-- 🎯 Dedicated hooks for every standard keyboard key
-- 🔧 Generic hooks for custom keyboard logic
 - ⌨️ Supports both `keydown` and `keyup` events
-- 🌍 Based on the MDN `KeyboardEvent.key` specification
-- 📖 Auto-generated documentation from MDN
+- 🎯 Dedicated hook for every standard `KeyboardEvent.key`
+- 🔧 Generic hooks for custom keyboard logic
+- 📖 Documentation generated from MDN
+- 🌍 Cross-platform key descriptions and virtual key codes
+- 🧩 Supports custom `EventTarget`
+- ✅ SSR-safe
+
+---
 
 ## Installation
 
 ```bash
 npm install use-keyboard-event
 ```
+
+---
 
 ## Basic usage
 
@@ -60,9 +68,13 @@ function Example() {
 }
 ```
 
+---
+
 ## Generic hooks
 
-If you need a key that doesn't have a dedicated wrapper—or want to match multiple keys—you can use the generic hooks.
+If you need a key that doesn't have a dedicated wrapper — or want to match multiple keys — you can use the generic hooks.
+
+---
 
 ### useKeyDown
 
@@ -74,6 +86,8 @@ useKeyDown("Enter", () => {
 });
 ```
 
+---
+
 ### useKeyUp
 
 ```jsx
@@ -83,6 +97,8 @@ useKeyUp("Enter", () => {
     console.log("Enter released");
 });
 ```
+
+---
 
 ## Custom key matching
 
@@ -110,6 +126,8 @@ useKeyDown(
     }
 );
 ```
+
+---
 
 ## API
 
@@ -139,6 +157,8 @@ useKeyboardEvent(
 );
 ```
 
+---
+
 ## Available hooks
 
 The library exports:
@@ -162,9 +182,55 @@ Examples:
 
 ...and many more.
 
+---
+
+## Why dedicated hooks?
+
+Using dedicated hooks:
+
+```jsx
+useEscapeKeyDown(closeModal);
+```
+
+is often easier to read than:
+
+```jsx
+useKeyDown("Escape", closeModal);
+```
+
+The dedicated hooks also provide:
+
+- MDN-based documentation
+- key descriptions
+- platform-specific virtual key codes
+- browser compatibility notes
+- IDE auto-completion
+
+---
+
+## Tree shaking
+
+Every hook lives in its own module.
+
+Modern bundlers only include the hooks you actually import.
+
+```jsx
+import {
+    useEscapeKeyDown
+} from "use-keyboard-event";
+```
+
+will not bundle hundreds of unused hooks.
+
+---
+
 ## Browser support
 
-The generated hooks are based on the official MDN `KeyboardEvent.key` specification and follow the standard keyboard event API supported by modern browsers.
+The library follows the standard `KeyboardEvent.key` API supported by all modern browsers.
+
+Generated documentation is based on the MDN Web Docs keyboard specification.
+
+---
 
 ## License
 

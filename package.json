@@ -1,9 +1,10 @@
 {
   "name": "use-keyboard-event",
   "version": "0.0.1",
-  "description": "React's keyboard event hook.",
+  "description": "React hooks for listening keyboard events.",
   "keywords": [
     "react",
+    "listening",
     "keyboard",
     "event",
     "keyup",
