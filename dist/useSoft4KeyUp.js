@@ -1,4 +1,4 @@
-import useKeyUp from "./useKeyUp";
+import useKeyUp from "./useKeyUp.js";
 
 /**
  * React useKeyUp wrapper for key "Soft4".

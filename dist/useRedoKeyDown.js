@@ -1,4 +1,4 @@
-import useKeyDown from "./useKeyDown";
+import useKeyDown from "./useKeyDown.js";
 
 /**
  * React useKeyDown wrapper for key "Redo".

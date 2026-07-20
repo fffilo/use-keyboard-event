@@ -104,7 +104,7 @@ function generateDocBlockFootnotes(lines, footnotes, definitions) {
 
 function generateScript(hookName, wrapper, config, categories, footnotes) {
     const lines = [];
-    lines.push(`import ${wrapper} from "./${wrapper}";`);
+    lines.push(`import ${wrapper} from "./${wrapper}.js";`);
     lines.push(``);
     generateDocBlock(lines, wrapper, config, categories, footnotes);
     lines.push(`export default function ${hookName}(callback, enabled = true) {`);
