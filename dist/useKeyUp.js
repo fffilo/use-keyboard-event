@@ -1,4 +1,4 @@
-import useKeyboardEvent from "./useKeyboardEvent";
+import useKeyboardEvent from "./useKeyboardEvent.js";
 
 /**
  * Key up event react hook.
