@@ -159,9 +159,9 @@ for (const section of data) {
 
 // Create barrel file.
 writeFileSync("dist/index.js", `export { default } from "./useKeyboardEvent.js";
-export { useKeyDown } from "./useKeyDown.js";
-export { useKeyUp } from "./useKeyUp.js";
-${generated.map(hookName => `export { ${hookName} } from "./${hookName}.js";`).join("\n")}
+export { default as useKeyDown } from "./useKeyDown.js";
+export { default as useKeyUp } from "./useKeyUp.js";
+${generated.map(hookName => `export { default as ${hookName} } from "./${hookName}.js";`).join("\n")}
 `);
 
 console.log(`Copied ${copied.length} hook(s) from source, ${generated.length} key hook(s) generated, ${deprecated.length} deprecated key(s) skipped`);
