@@ -26,6 +26,7 @@
     "npm": ">=6"
   },
   "files": [
+    "dist/*",
     "index.js",
     "CHANGELOG.md",
     "LICENSE",
