@@ -21,8 +21,7 @@
     "parse-mdn": "node scripts/parse-mdn.mjs",
     "parse-data": "node scripts/parse-data.mjs",
     "generate-hooks": "node scripts/generate-hooks.mjs",
-    "generate-readme": "node scripts/generate-readme.mjs",
-    "build": "npm run clean && npm run read-mdn && npm run parse-mdn && npm run parse-data && npm run generate-hooks && npm run generate-readme"
+    "build": "npm run clean && npm run read-mdn && npm run parse-mdn && npm run parse-data && npm run generate-hooks"
   },
   "type": "module",
   "engines": {
