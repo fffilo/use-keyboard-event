@@ -133,13 +133,13 @@ useKeyDown(
 
 Low-level hook used by all other hooks.
 
-| Parameter   | Type                           | Description                                           |
-| ----------- | ------------------------------ | ----------------------------------------------------- |
-| `eventName` | `string`                       | Keyboard event type (`"keydown"` or `"keyup"`).       |
-| `key`       | `string \| (event) => boolean` | Key value or custom matcher.                          |
-| `callback`  | `Function`                     | Invoked when the key matches.                         |
-| `enabled`   | `boolean`                      | Enables or disables the listener. Defaults to `true`. |
-| `target`    | `EventTarget`                  | Event target. Defaults to `document`.                 |
+| Parameter   | Type                           | Description                                            |
+| ----------- | ------------------------------ | ------------------------------------------------------ |
+| `eventName` | `string`                       | Keyboard event type (`"keydown"` or `"keyup"`).        |
+| `key`       | `string \| (event) => boolean` | Key value or custom matcher.                           |
+| `callback`  | `Function`                     | Invoked when the key matches.                          |
+| `enabled`   | `boolean`                      | Enables or disables the listener (defaults to `true`). |
+| `target`    | `EventTarget`                  | Event target (defaults to `document`).                 |
 
 Example:
 
@@ -196,13 +196,17 @@ is often easier to read than:
 useKeyDown("Escape", closeModal);
 ```
 
-The dedicated hooks also provide:
+Every dedicated hook includes comprehensive JSDoc based on the official MDN `KeyboardEvent.key` documentation.
 
-- MDN-based documentation
+This means your IDE can provide:
+
 - key descriptions
 - platform-specific virtual key codes
 - browser compatibility notes
-- IDE auto-completion
+- deprecation information
+- links to the relevant MDN documentation
+
+The documentation is generated automatically, keeping it synchronized with the latest MDN keyboard specification.
 
 ---
 
@@ -229,20 +233,6 @@ The library follows the standard `KeyboardEvent.key` API supported by all modern
 Generated documentation is based on the MDN Web Docs keyboard specification.
 
 ---
-
-## Documentation
-
-Every generated hook includes comprehensive JSDoc based on the official MDN `KeyboardEvent.key` documentation.
-
-This means your IDE can provide:
-
-- key descriptions
-- platform-specific virtual key codes
-- browser compatibility notes
-- deprecation information
-- links to the relevant MDN documentation
-
-The documentation is generated automatically, keeping it synchronized with the latest MDN keyboard specification.
 
 ## License
 
