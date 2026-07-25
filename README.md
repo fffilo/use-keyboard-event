@@ -29,7 +29,7 @@ handling.
 ## Installation
 
 ```bash
-npm install use-keyboard-event
+npm install @fffilo/use-keyboard-event
 ```
 
 ---
