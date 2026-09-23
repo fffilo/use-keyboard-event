@@ -34,6 +34,7 @@
     "LICENSE",
     "README.md"
   ],
+  "sideEffects": false,
   "author": {
     "name": "Franjo Filo",
     "email": "fffilo666r@gmail.com",
